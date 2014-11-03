@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'DMJobManager', :exclusive => true do
+  pod "DMJobManager", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "DMJobManager", :path => "../"
+
+  
+end

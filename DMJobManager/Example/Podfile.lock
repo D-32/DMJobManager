@@ -1,0 +1,14 @@
+PODS:
+  - DMJobManager (0.1.0)
+
+DEPENDENCIES:
+  - DMJobManager (from `../`)
+
+EXTERNAL SOURCES:
+  DMJobManager:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DMJobManager: 43f9f32254c04978f020d7aeb6dc1af817c8f44b
+
+COCOAPODS: 0.34.4

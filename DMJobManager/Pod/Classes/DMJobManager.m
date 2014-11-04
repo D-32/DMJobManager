@@ -59,22 +59,25 @@ static DMJobManager* instance;
     _running = YES;
     id<DMJob> job = [_queue objectAtIndex:0];
     [job executeWithCompletion:^(BOOL success) {
-        if (success) {
-            [_queue removeObjectAtIndex:0];
-            [self storeState];
-            if (_queue.count > 0) {
-                // new objects in queue
-                [self processQueue];
-            } else {
-                _running = NO;
-            }
+        [_queue removeObjectAtIndex:0];
+        [self storeState];
+    
+        if (_queue.count > 0) {
+            // new objects in queue
+            [self processQueue];
         } else {
-            // try again
+            _running = NO;
+        }
+        
+        if (!success) {
             NSUInteger retryDelay = 10;
             if ([job respondsToSelector:@selector(retryDelay)]) {
                 retryDelay = [job retryDelay];
             }
-            [self performSelector:@selector(processQueue) withObject:nil afterDelay:retryDelay];
+            if ([job respondsToSelector:@selector(willRetry)]) {
+                [job willRetry];
+            }
+            [self performSelector:@selector(postJob:) withObject:job afterDelay:retryDelay];
         }
     }];
 }

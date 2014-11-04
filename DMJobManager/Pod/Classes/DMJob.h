@@ -14,5 +14,6 @@ typedef void (^CompletionBlock)(BOOL);
 
 @optional
 - (NSTimeInterval)retryDelay;
+- (void)willRetry;
 
 @end

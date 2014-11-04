@@ -4,7 +4,10 @@
 [![Version](https://img.shields.io/cocoapods/v/DMJobManager.svg?style=flat)](http://cocoadocs.org/docsets/DMJobManager)
 [![License](https://img.shields.io/cocoapods/l/DMJobManager.svg?style=flat)](http://cocoadocs.org/docsets/DMJobManager)
 
-A simple library to manage "jobs", like web requests, in a queue that can be handled asynchronously. Often you want to perform a web request after the user has performed an action, like changed his address. In many cases if there's no network connection you don't want to keep the user blocked. DMJobManager helps you queue these requests, they even get persisted, so no request will ever get lost :)
+A simple library to manage "jobs", like web requests, in a queue that can be handled asynchronously.  
+
+Often you want to perform a web request after the user has performed an action. In many cases if there's no network connection you don't want to keep the user blocked.  
+DMJobManager helps you queue these requests, they even get persisted, so no request will ever get lost :)
 
 ## Installation
 

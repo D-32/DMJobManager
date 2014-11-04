@@ -18,6 +18,9 @@
     if ([DMJobManager pendingJobs] == 0) {
         DMDummyJob* job = [[DMDummyJob alloc] init];
         [DMJobManager postJob:job];
+        
+        DMHTTPRequestJob* job2 = [[DMHTTPRequestJob alloc] initWithUrl:@"http://d-32.com"];
+        [DMJobManager postJob:job2];
     }
     
     return YES;

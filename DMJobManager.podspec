@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "DMJobManager"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "Job queue system"
   s.homepage         = "https://github.com/d-32/DMJobManager"
   s.license          = 'MIT'
